@@ -3,33 +3,35 @@ def badge_maker(name)
   phrase = "Hello, my name is #{name}."
   phrase
   end
-badge_maker("Arel")
+#badge_maker("Arel")
 
 
 def batch_badge_creator(attendees)
-attendees.each do |i|
-  puts "Hello, my name is #{i}."
-  people_in_attendence += 1
+attendees.map do |i|
+ "Hello, my name is #{i}."
+ 
 end
 end
-batch_badge_creator(Edsger)
+#batch_badge_creator(Edsger)
 
 def assign_rooms(attendees)
-attendees.each_with_index do |x,i|
-  puts "Hello,#{i}! You'll be assigned to room #{x}!"
-  people_in_attendence += 1
+attendees.map.each_with_index do |x, i|
+   "Hello, #{x}! You'll be assigned to room #{i+1}!"
+  
 end
 end
-assign_rooms(Edsger)
+#assign_rooms(Edsger)
 
 def printer(attendees)
-   puts batch_badge_creator
-   puts assign_rooms
+    batch_badge_creator(attendees).each do |attendee|
+      puts attendee
  end
- printer(attendees)
+ assign_rooms(attendees).each do |attendee|
+   puts attendee
+ #printer(attendees)
      
-        
-
+   end
+  end 
 
 
 #basket = ["apple 1","apple 2","apple 3","apple 4","apple 5","apple 6","apple 7","apple 8","apple 9","apple 10"]
